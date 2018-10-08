@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jenkin.wx.dao.WeChatDao">
+    <insert id="insertAccessToken" parameterType="AccessToken">
+        insert into t_wx_access_token (access_token, expires_in, create_time) values (#{access_token}, #{expires_in}, now())
+    </insert>
+
+    <select id="queryLatestAccessToken" resultType="AccessToken">
+        select access_token, expires_in, create_time from t_wx_access_token where create_time = (select max(create_time) from t_wx_access_token);
+    </select>
+</mapper>
