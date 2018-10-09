@@ -49,3 +49,5 @@ access_token是公众号的全局唯一接口调用凭据，公众号调用各�
         return accessToken.getAccess_token();
     }
 ```
+## 联系我
+![image](https://github.com/JenkinWang/WeChatOfficialAccount/blob/master/images/qrcode_for_gh_7e1da67205e4_258.jpg)
