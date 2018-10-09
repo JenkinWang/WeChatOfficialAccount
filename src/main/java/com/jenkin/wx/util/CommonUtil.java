@@ -19,10 +19,13 @@ import java.nio.charset.Charset;
  * @description:
  */
 public class CommonUtil {
-    private static final String APPID = "wx799c3214173535eb";
+    // 你账号的APPID
+    private static final String APPID = "Your APPID";
 
-    private static final String APPSECRET = "2606c8ee00d42b380d1da7b0d739b92c";
+    // 你账号的APPSECRET
+    private static final String APPSECRET = "Your APPSECRET";
 
+    // 获取access_token的URL
     private static final String ACCESS_TOKEN_URL = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + APPID + "&secret=" + APPSECRET;
 
     // 创建菜单URL
