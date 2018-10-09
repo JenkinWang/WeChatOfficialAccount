@@ -10,6 +10,7 @@
 ![image](https://github.com/JenkinWang/WeChatOfficialAccount/blob/master/images/Screen%20Shot%202018-10-09%20at%2013.29.06.png)<br/>
 ![image](https://github.com/JenkinWang/WeChatOfficialAccount/blob/master/images/Screen%20Shot%202018-10-09%20at%2013.27.14.png)<br/>
 token值应该与你代码中设置的token保持一致。填写好后提交，如果出现配置失败，多提交两三次，即可，如果还是失败，那就要检查你的代码了。到这里微信开发的基本配置算是弄好了。<br/>
+### 设置access_token值
 access_token是公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用access_token。access_token的有效期目前为2个小时，需定时刷新，重复获取将导致上次获取的access_token失效。这里我使用了SpringMVC里的一个定时器，每两小时获取一次access_token的值存入数据库：
 ```
     /**
