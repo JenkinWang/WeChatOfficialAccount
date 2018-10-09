@@ -29,7 +29,7 @@ access_token是公众号的全局唯一接口调用凭据，公众号调用各�
 以及手动获取access_token的值：
 ```
     /**
-     * 手动获取access_token值
+     * 手动获取access_token值: 如果当前时间与数据库里的最新access_token值的时间相差大于7200秒，则access_token过期，需要重新获取access_token值，并入库
      * @return
      * @throws IOException
      */
@@ -38,9 +38,8 @@ access_token是公众号的全局唯一接口调用凭据，公众号调用各�
 
         long curMillis = DateUtil.getCurrentMillis();
         long myCustomMillis = DateUtil.getCustomDateMillis(accessToken.getCreate_time());
-        if ((curMillis - myCustomMillis) / 1000 >= 7200) {   // 如果大于7200秒，则access_token过期，需要重新获取access_token值
+        if ((curMillis - myCustomMillis) / 1000 >= 7200) {
             System.out.println("access_token值已过期，重新获取并入库......");
-            // 重新获取access_token值 并插入数据库
             accessToken = CommonUtil.getAccessToken();
             weChatService.insertAccessToken(accessToken);
         }
