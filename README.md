@@ -12,7 +12,7 @@
 token值应该与你代码中设置的token保持一致。填写好后提交，如果出现配置失败，多提交两三次，即可，如果还是失败，那就要检查你的代码了。到这里微信开发的基本配置算是弄好了。<br/>
 ### 设置access_token值
 access_token是公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用access_token。access_token的有效期目前为2个小时，需定时刷新，重复获取将导致上次获取的access_token失效。这里我使用了SpringMVC里的一个定时器，每两小时获取一次access_token的值存入数据库：
-```
+```java
     /**
      * 每两小时获取一次access_token值,并将access_token值存入数据库中
      */
@@ -29,7 +29,7 @@ access_token是公众号的全局唯一接口调用凭据，公众号调用各�
     }
 ```
 以及手动获取access_token的值：
-```
+```java
     /**
      * 手动获取access_token值: 如果当前时间与数据库里的最新access_token值的时间相差大于7200秒，则access_token过期，需要重新获取access_token值，并入库
      * @return
