@@ -49,5 +49,9 @@ access_token是公众号的全局唯一接口调用凭据，公众号调用各�
         return accessToken.getAccess_token();
     }
 ```
+## 功能
+可以对自定义菜单进行创建、删除、事件推送，创建、删除、查询个性化菜单；可以接收普通消息，接收事件推送、被动回复用户消息。
+## 优点
+使用SSM框架，对代码有很强的复用性和扩展性，并且很稳定。后续增加新的功能，可以直接在现有代码上进行二次开发。
 ## 联系我
 ![image](https://github.com/JenkinWang/WeChatOfficialAccount/blob/master/images/qrcode_for_gh_7e1da67205e4_258.jpg)
